@@ -26,9 +26,12 @@ pipeline {
                 sh '''
                     if [ -f build/index.html ]; then
                         echo "Test stage: build/index.html exists"
+                        npm test
+
                     else
                         echo "Test stage: build/index.html NOT found"
                         exit 1
+
                     fi
                 '''
             }
